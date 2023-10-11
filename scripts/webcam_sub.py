@@ -53,7 +53,7 @@ def callback(data):
       max_confident = round(max(confident[0]), 2)
       final_name = encoder.inverse_transform(face_name)[0]
       
-      if max_confident >= 8.29:
+      if max_confident >= 5.27:
         confident_text = str(final_name) + str(max_confident) + "%"
         face_rectangle(current_frame, x, y, w, h, confident_text)
 
