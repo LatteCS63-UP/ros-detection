@@ -28,8 +28,8 @@ def insert(data_insert):
     rospy.loginfo(str(data_insert.data))
 
     mycursor = mydb.cursor()
-    sql = "INSERT INTO checkname (name, date, time, status) VALUES (%s, %s, %s, %s)"
-    val = (data_insert.data, date, time, "มาเรียน")
+    sql = "INSERT INTO checkname (StudentID, SubjectID, DateCheck, TimeCheck, status) VALUES (%s, %s, %s, %s, %s)"
+    val = (data_insert.data, "225382", date, time, "มาเรียน")
 
     mycursor.execute(sql, val)
     mydb.commit()
@@ -49,7 +49,7 @@ if __name__ == "__main__":
         host = "10.1.15.62",
         user = "admin",
         password = "admin",
-        database = "test"
+        database = "project_robot_checking"
     )
 
     insert_check()
