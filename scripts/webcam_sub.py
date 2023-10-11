@@ -101,12 +101,12 @@ if __name__ == '__main__':
   ###
   facenet = FaceNet()
 
-  faces_embeddings = np.load("/home/ubuntu-20-04/catkin_ws/src/cv_basics/scripts/faces_embeddings_done_4classes.npz")
+  faces_embeddings = np.load("/home/ubuntu-20-04/catkin_ws/src/cv_basics/scripts/data_set/faces_recognition_dataset.npz")
   Y = faces_embeddings['arr_1']
   encoder = LabelEncoder()
   encoder.fit(Y)
   haarcascade = cv2.CascadeClassifier("/home/ubuntu-20-04/catkin_ws/src/cv_basics/scripts/haarcascade_frontalface_default.xml")
 
-  model = pickle.load(open("/home/ubuntu-20-04/catkin_ws/src/cv_basics/scripts/svm_model_160x160.pkl", 'rb'))
+  model = pickle.load(open("scripts/model/svm_dataset_model_160x160.pkl", 'rb'))
   ###
   receive_message()
